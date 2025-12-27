@@ -1,5 +1,5 @@
 {
-    "name": "lll-coderx/php-login",
+    "name": "nsr002/php-login",
     "description": "Secure PHP Login and Password Reset System with OWASP Top 10 Security",
     "type": "project",
     "require": {

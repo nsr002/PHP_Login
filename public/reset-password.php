@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Load dependencies
 require_once __DIR__ . '/../config/database.php';
@@ -19,7 +20,7 @@ SessionManager::start();
 
 // Redirect if already logged in
 if (SessionManager::isLoggedIn()) {
-    header('Location: /public/dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 
@@ -28,7 +29,7 @@ $success = '';
 $token = $_GET['token'] ?? '';
 
 if (empty($token)) {
-    header('Location: /public/forgot-password.php');
+    header('Location: /forgot-password.php');
     exit;
 }
 
@@ -98,7 +99,7 @@ require_once __DIR__ . '/../templates/header.php';
             <?php echo InputValidator::escapeHtml($error); ?>
             <?php if (str_contains($error, 'Invalid or expired')): ?>
                 <p style="margin-top: 1rem;">
-                    <a href="/public/forgot-password.php">Request a new reset link</a>
+                    <a href="/forgot-password.php">Request a new reset link</a>
                 </p>
             <?php endif; ?>
         </div>
@@ -108,7 +109,7 @@ require_once __DIR__ . '/../templates/header.php';
         <div class="alert alert-success">
             <?php echo InputValidator::escapeHtml($success); ?>
             <p style="margin-top: 1rem;">
-                <a href="/public/login.php">Click here to login</a>
+                <a href="/login.php">Click here to login</a>
             </p>
         </div>
     <?php elseif (!$error || !str_contains($error, 'Invalid or expired')): ?>
@@ -152,7 +153,7 @@ require_once __DIR__ . '/../templates/header.php';
     <?php endif; ?>
     
     <div class="form-links">
-        <p><a href="/public/login.php">Back to Login</a></p>
+        <p><a href="/login.php">Back to Login</a></p>
     </div>
 </div>
 

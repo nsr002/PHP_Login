@@ -35,7 +35,7 @@ All four extensions should be listed.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/lll-coderx/PHP_Login.git
+git clone https://github.com/nsr002/PHP_Login.git
 cd PHP_Login
 ```
 
