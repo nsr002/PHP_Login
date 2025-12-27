@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Load dependencies
 require_once __DIR__ . '/../config/database.php';
@@ -16,7 +17,7 @@ SessionManager::start();
 
 // Redirect if already logged in
 if (SessionManager::isLoggedIn()) {
-    header('Location: /public/dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $result = $authService->login($email, $password);
                 
                 if ($result['success']) {
-                    header('Location: /public/dashboard.php');
+                    header('Location: /dashboard.php');
                     exit;
                 } else {
                     $error = $result['message'];
@@ -99,8 +100,8 @@ require_once __DIR__ . '/../templates/header.php';
     </form>
     
     <div class="form-links">
-        <p><a href="/public/forgot-password.php">Forgot your password?</a></p>
-        <p>Don't have an account? <a href="/public/register.php">Register here</a></p>
+        <p><a href="/forgot-password.php">Forgot your password?</a></p>
+        <p>Don't have an account? <a href="/register.php">Register here</a></p>
     </div>
 </div>
 

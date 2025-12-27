@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Load dependencies
 require_once __DIR__ . '/../config/database.php';
@@ -22,5 +23,5 @@ try {
 }
 
 // Redirect to login page
-header('Location: /public/login.php');
+header('Location: /login.php');
 exit;

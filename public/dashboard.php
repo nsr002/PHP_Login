@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Load dependencies
 require_once __DIR__ . '/../config/database.php';
@@ -14,7 +15,7 @@ SessionManager::start();
 
 // Redirect if not logged in
 if (!SessionManager::isLoggedIn()) {
-    header('Location: /public/login.php');
+    header('Location: /login.php');
     exit;
 }
 
@@ -61,7 +62,7 @@ require_once __DIR__ . '/../templates/header.php';
     </div>
     
     <div style="margin-top: 2rem;">
-        <a href="/public/logout.php" class="btn" style="display: inline-block; width: auto; padding: 0.75rem 2rem; text-decoration: none;">Logout</a>
+        <a href="/logout.php" class="btn" style="display: inline-block; width: auto; padding: 0.75rem 2rem; text-decoration: none;">Logout</a>
     </div>
 </div>
 
